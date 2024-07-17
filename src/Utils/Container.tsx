@@ -1,18 +1,16 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 
 type ContainerProps = {
-    child : ReactNode
-    styles : string
-}
+    children: ReactNode;
+    styles?: string;
+};
 
+const Container = ({ children, styles = '' }: ContainerProps) => {
+    return (
+        <div className={`p-4 border rounded bg-gray-100 shadow-md ${styles}`}>
+            {children}
+        </div>
+    );
+};
 
-const Container = ({child, styles}:ContainerProps) => {
-  return (
-    <div
-     className={`p-4 border rounded bg-gray-100 ${styles}`}>
-        {child}
-     </div>
-  )
-}
-
-export default Container
+export default Container;

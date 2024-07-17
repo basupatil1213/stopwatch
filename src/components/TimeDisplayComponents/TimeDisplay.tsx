@@ -14,13 +14,17 @@ const TimeDisplay = ({time}: TimeDisplayProps) => {
         const getMinutes = `0${minutes}`.slice(-2);
     
         return `${getMinutes}:${getSeconds}:${getMilliseconds}`;
-      };
-    
-      return (
-        <div className="display">
-          {formatTime(time)}
+    };
+
+    return (
+        <div className="flex items-center justify-center h-[40vh] w-[80vh] bg-gray-100">
+            <div className="text-center bg-white p-4 rounded-lg shadow-md">
+                <div className="text-2xl font-mono text-gray-700">
+                    {formatTime(time)}
+                </div>
+            </div>
         </div>
-      );
+    );
 }
 
 export default TimeDisplay

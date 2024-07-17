@@ -1,20 +1,22 @@
 import React from 'react';
 
-type ClickEventHandler = (event: React.MouseEvent<HTMLButtonElement>) => void;
-
 type ButtonProps = {
-    styles?: string
-    displayName: string
-    onClick: ClickEventHandler
-    disabled?: boolean
-}
+    onClick: () => void;
+    styles: string;
+    displayName: string;
+    disabled?: boolean;
+};
 
-const Button = ({ styles, displayName, onClick, disabled }: ButtonProps) => {
+const Button = ({ onClick, styles, displayName, disabled }: ButtonProps) => {
     return (
-        <button disabled={disabled} onClick={onClick} className={`  ${styles} hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}>
+        <button
+            onClick={onClick}
+            className={`focus:outline-none transition duration-150 ease-in-out ${styles} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            disabled={disabled}
+        >
             {displayName}
         </button>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;

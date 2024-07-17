@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import StopWatch from './components/StopWatch/StopWatch';
 
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="flex justify-center">Stop Watch</h1>
+    <div className="App h-full">
+      <header className="w-full py-6 bg-blue-600 text-white shadow-md h-[10vh]">
+        <h1 className="text-center text-3xl font-bold">Stop Watch</h1>
       </header>
-      <body>
+      <body className='h-[60vh]'>
         <StopWatch/>
       </body>
     </div>
